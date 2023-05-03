@@ -42,7 +42,7 @@ def write_to_csv( temp , fahr , press , humi , dew , timestamp , writer ):
   writer.writerow( data )
   
 def write_to_console( time , temp , fahr , press , humi , dew ):
-  print(f'##########################################\n' +
+  print(f'__________________________________________\n' +
   f'TIMESTAMP:      {time}\n'  +
   f'TEMPERATURE:    {temp} CELSIUS\n'  +
   f'FAHRENHEIT:     {fahr} FAHRENHEIT\n'  +
@@ -120,9 +120,9 @@ def main():
       fahrenheit  = round( temperature * 1.8 + 32 , 2 )
       timestamp   = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-      #write_to_influx( client , temperature , fahrenheit , pressure , humidity , dewpoint , TEMP_THRESHOLD , timestamp )
+      write_to_influx( client , temperature , fahrenheit , pressure , humidity , dewpoint , TEMP_THRESHOLD , timestamp )
       
-      write_to_csv( temperature , fahrenheit , pressure , humidity , dewpoint , timestamp , writer )
+      #write_to_csv( temperature , fahrenheit , pressure , humidity , dewpoint , timestamp , writer )
       
       write_to_console ( timestamp , temperature , fahrenheit , pressure , humidity , dewpoint )
       
