@@ -131,13 +131,13 @@ def main():
     
       time.sleep( SLEEP_TIMER )
   
-    avg_temp /= (counter - 1)
+    avg_temp /= ( counter - 1 )
   
     if avg_temp <= TEMP_THRESHOLD:
-      GPIO.output(GPIO_PIN, GPIO.HIGH)
+      GPIO.output( GPIO_PIN , GPIO.HIGH )
   
     else:
-      GPIO.output(GPIO_PIN, GPIO.LOW)
+      GPIO.output( GPIO_PIN , GPIO.LOW )
     
 # ---------------------------------------- S T A R T ----------------------------------------- #
 
