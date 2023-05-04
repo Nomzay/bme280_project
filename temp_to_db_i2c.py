@@ -4,7 +4,7 @@
 #
 # TITLE: BME280 supported evaluation program
 # AUTHOR: G*********** J*****
-# VERSION: 1.4 
+# VERSION: 1.6 
 #
 # ---------------------------------------- L I B R A R I E S ---------------------------------- #
 
