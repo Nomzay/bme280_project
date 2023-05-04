@@ -9,11 +9,11 @@
 # ---------------------------------------- L I B R A R I E S ---------------------------------- #
 
 import time
-import datetime
-import math
 
+import math
 import csv
 import RPi.GPIO as GPIO
+
 from influxdb import InfluxDBClient
 
 # ---------------------------------------- F U N C T I O N S ---------------------------------- #
@@ -98,7 +98,7 @@ def main():
   
   CSV_FIELDNAMES = ['TIMESTAMP','TEMPERATURE','FAHRENHEIT','PRESSURE','HUMIDITY','DEW_POINT']
   PATH_TO_CSV    = "/home/jgoeckem/bme280_project/bme_logs/"
-  CSV_FILENAME   = PATH_TO_CSV + datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S") + '_DATA_LOG.csv'
+  CSV_FILENAME   = PATH_TO_CSV + time.strftime("%Y-%m-%d_%H:%M:%S") + '_DATA_LOG.csv'
   
   
   csv_file  = open( CSV_FILENAME , 'w' )
@@ -118,7 +118,7 @@ def main():
     
       dewpoint    = dew_point( temperature , humidity )
       fahrenheit  = round( temperature * 1.8 + 32 , 2 )
-      timestamp   = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+      timestamp   = time.strftime("%Y-%m-%d %H:%M:%S")
 
       write_to_influx( client , temperature , fahrenheit , pressure , humidity , dewpoint , TEMP_THRESHOLD , timestamp )
       
