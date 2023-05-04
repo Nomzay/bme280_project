@@ -3,7 +3,7 @@
 # ---------------------------------------- H E A D E R ---------------------------------------- #
 #
 # TITLE: BME280 supported evaluation program
-# AUTHOR: Goeckemeyer Jasmon, Deutzmann Nick, Wolbeck Lukas, Karagoez Abdullah, Simon Matthias
+# AUTHOR: G*********** J*****
 # VERSION: 1.4 
 #
 # ---------------------------------------- L I B R A R I E S ---------------------------------- #
@@ -122,7 +122,7 @@ def main():
 
       write_to_influx( client , temperature , fahrenheit , pressure , humidity , dewpoint , TEMP_THRESHOLD , timestamp )
       
-      #write_to_csv( temperature , fahrenheit , pressure , humidity , dewpoint , timestamp , writer )
+      write_to_csv( temperature , fahrenheit , pressure , humidity , dewpoint , timestamp , writer )
       
       write_to_console ( timestamp , temperature , fahrenheit , pressure , humidity , dewpoint )
       
