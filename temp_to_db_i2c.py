@@ -3,7 +3,7 @@
 # ---------------------------------------- H E A D E R ---------------------------------------- #
 #
 # TITLE: BME280 supported evaluation program
-# AUTHOR: Goeckemeyer Jasmon, Deutzmann Nick, Wolbeck Lukas, Karagoez Abdullah, Simon Matthias
+# AUTHOR: G*********** J*****
 # VERSION: 1.4 
 #
 # ---------------------------------------- L I B R A R I E S ---------------------------------- #
