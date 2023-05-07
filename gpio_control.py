@@ -10,7 +10,7 @@ interval_in_s = 5.0
 while(True):
 	print("off")
 	GPIO.output(18, GPIO.HIGH)
-	time.sleep(interval_in_s) # sleep interval in Sekunden
+	time.sleep(interval_in_s) # sleep interval in sec
 	print("on")
 	GPIO.output(18, GPIO.LOW)
 	time.sleep(interval_in_s)
