@@ -4,7 +4,7 @@
 #
 # TITLE: BME280 supported evaluation program
 # AUTHOR: G*********** J*****
-# VERSION: 1.6 
+# VERSION: 1.7 
 #
 # ---------------------------------------- L I B R A R I E S ---------------------------------- #
 
@@ -90,26 +90,30 @@ def main():
   SLEEP_TIMER     = 10
   SWITCH_INTERVAL = 6
 
+  # path to the bme280 messurements
   DEVICE_LOCATION      = "/sys/bus/iio/devices/iio:device0/"
   TEMPERATURE_FILE     = "in_temp_input"
   HUMIDITY_FILE        = "in_humidityrelative_input"
   PRESSURE_FILE        = "in_pressure_input"
   
-  
+  # variables for the cvs file
   CSV_FIELDNAMES = ['TIMESTAMP','TEMPERATURE','FAHRENHEIT','PRESSURE','HUMIDITY','DEW_POINT']
   PATH_TO_CSV    = "/home/jgoeckem/bme280_project/bme_logs/"
   CSV_FILENAME   = PATH_TO_CSV + time.strftime("%Y-%m-%d_%H:%M:%S") + '_DATA_LOG.csv'
   
-  
+  # csv writer instance
   csv_file  = open( CSV_FILENAME , 'w' )
   writer    = csv.writer( csv_file )
   
   writer.writerow( CSV_FIELDNAMES )
+  
+  # main loop
   while True:
 
     counter = 1
     avg_temp = 0.0
   
+    # loop for aggregation of the measured values within one minute
     while  counter <= SWITCH_INTERVAL:
   
       temperature = round( read_file_to_float( DEVICE_LOCATION + TEMPERATURE_FILE ) / 1000 , 2 )
