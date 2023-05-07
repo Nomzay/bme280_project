@@ -10,8 +10,8 @@ Calculation:
 - Dew point
 
 Transmission of data with time in:
-InfluxDB and subsequent retrieval by Grafana
-CSV file
+- InfluxDB and subsequent retrieval by Grafana
+- CSV file
 
 The following files contain a test measurement:
 - screenlog.0
