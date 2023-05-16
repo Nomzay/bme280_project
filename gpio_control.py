@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 import RPi.GPIO as GPIO
 import time
-# die GPIOS koennen über die PINNummer oder die GPIONummer
-# angesprochen werden
-GPIO.setmode(GPIO.BCM) # hier GPIO-Nummer
+
+GPIO.setmode(GPIO.BCM)
 GPIO.setup(18, GPIO.OUT)
  
 interval_in_s = 5.0
+
 while(True):
 	print("off")
 	GPIO.output(18, GPIO.HIGH)
